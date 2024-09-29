@@ -25,6 +25,17 @@
 ## Файл Head  
 	- Файл Head один из служебных файлов папки .git  
 	- В файле хранится ссылка на файл, в котором записан Хеш на последний коммит  
+## Схема статусов в GIT
 
-
+```mermaid
+graph LR;
+  node1(untracked неотслеживанмый) -- "git add" --> node2(staged в списке на коммит + tracked);
+  node2(staged в списке на коммит + tracred)    -- "git commit"     --> node4(tracked/comitted);
+  node3(modified) -- “git add“ --> node2(staged в списке на коммит + tracked);
+  node4(tracked/comitted) -- “изменения“ --> node3(modified);
+  style node1 fill:#3366ff;
+  style node2 fill:#ffa033, color:#000000;
+  style node3 fill:#ffffff, color:#000000;
+  style node4 fill:#ffffff, color:#000000;
+``` 
 
